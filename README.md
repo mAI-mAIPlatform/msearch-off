@@ -1,0 +1,2 @@
+# msearch-off
+msearch off
