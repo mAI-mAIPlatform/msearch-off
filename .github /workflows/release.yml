@@ -2,7 +2,7 @@ name: Build & Release mEdge 2.0
 on:
   workflow_dispatch:
   push:
-    tags: ['v*.*.*']
+    tags: ['v1.0.0']
 jobs:
   build:
     strategy:
