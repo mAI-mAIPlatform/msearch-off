@@ -1,55 +1,26 @@
-{
-  "name": "m-edge-2",
+"build": {
+  "appId": "com.mai.medge2",
   "productName": "mEdge 2.0",
-  "version": "1.0.0",
-  "description": "Navigateur desktop bas\u00e9 sur Electron + Chromium avec mSearch par d\u00e9faut.",
-  "author": "mAI",
-  "license": "MIT",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "build": "electron-builder -mwl",
-    "pack": "electron-builder --dir",
-    "release": "electron-builder --publish always"
+  "icon": "build/icon.png",
+  "files": [
+    "main.js",
+    "preload.js",
+    "src/**/*",
+    "build/**/*"
+  ],
+  "mac": {
+    "category": "public.app-category.productivity",
+    "artifactName": "mEdge-${version}-mac.${ext}"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "electron": "^32.1.2",
-    "electron-builder": "^24.13.3"
+  "win": {
+    "target": ["nsis", "zip"],
+    "artifactName": "mEdge-${version}-win.${ext}"
   },
-  "build": {
-    "appId": "com.mai.medge2",
-    "files": [
-      "main.js",
-      "preload.js",
-      "src/**/*",
-      "build/**/*"
-    ],
-    "mac": {
-      "category": "public.app-category.productivity",
-      "icon": "build/icon.icns",
-      "artifactName": "mEdge-${version}-mac.${ext}"
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "zip"
-      ],
-      "icon": "build/icon.ico",
-      "artifactName": "mEdge-${version}-win.${ext}"
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ],
-      "icon": "build/icons",
-      "artifactName": "mEdge-${version}-linux.${ext}"
-    },
-    "publish": [
-      {
-        "provider": "github"
-      }
-    ]
-  }
+  "linux": {
+    "target": ["AppImage", "deb"],
+    "artifactName": "mEdge-${version}-linux.${ext}"
+  },
+  "publish": [
+    { "provider": "github" }
+  ]
 }
