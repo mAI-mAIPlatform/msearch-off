@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: blob: https://*; connect-src https://* http://* ws: wss:; img-src 'self' data: https://*; media-src https://* blob: data:; frame-src https://* http://*;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mEdge 2.0</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="toolbar glass">
+    <div class="btns">
+      <button id="back" title="Retour">⟵</button>
+      <button id="forward" title="Avancer">⟶</button>
+      <button id="reload" title="Recharger">↻</button>
+    </div>
+    <form id="omnibox-form" class="omnibox-wrap">
+      <input id="omnibox" type="text" placeholder="Recherche ou URL — mSearch par défaut" autocomplete="off"/>
+    </form>
+    <div class="btns">
+      <button id="home" title="Accueil">🏠</button>
+      <button id="newtab" title="Nouvel onglet">➕</button>
+    </div>
+  </header>
+
+  <main>
+    <webview id="view" src="https://m-search-officiel.base44.app" allowpopups style="width:100%;height:100%;"></webview>
+  </main>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

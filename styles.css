@@ -1,0 +1,33 @@
+:root{
+  --glass-bg: rgba(20,20,25,0.55);
+  --glass-brd: rgba(255,255,255,0.12);
+  --text: #f3f3f3;
+  --accent: #8ab4ff;
+}
+*{ box-sizing: border-box; }
+html,body{ height:100%; margin:0; background: #0b0c10; color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+header.toolbar{
+  display:flex; align-items:center; gap:12px; padding:10px;
+  position: sticky; top:0; z-index:10;
+}
+.glass{
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  border: 1px solid var(--glass-brd);
+  border-radius:12px; margin:8px;
+}
+.btns{ display:flex; gap:8px; }
+button{
+  background: transparent; color: var(--text); border: 1px solid var(--glass-brd);
+  padding: 6px 10px; border-radius: 8px; cursor: pointer;
+}
+button:hover{ border-color: var(--accent); }
+.omnibox-wrap{ flex:1; }
+#omnibox{
+  width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--glass-brd);
+  background: rgba(255,255,255,0.06); color: var(--text); outline: none;
+}
+#omnibox:focus{ border-color: var(--accent); }
+main{ height: calc(100vh - 72px); }
+webview{ border:none; border-radius: 12px; overflow:hidden; }
